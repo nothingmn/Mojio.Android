@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mojio.Android</string>
+    <string name="title_vehicle_list">Vehicles</string>
+    <string name="title_vehicle_detail">Vehicle Detail</string>
+
+</resources>

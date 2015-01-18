@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.moj.mojioandroid.MainTabbedActivity">
+    <item android:id="@+id/action_section1" android:title="@string/action_section1"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_section2" android:title="@string/action_section2"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+</menu>
+<!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/src/main/res/menu/menu_main_tabbed.xml -->

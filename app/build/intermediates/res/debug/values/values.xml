@@ -203,6 +203,10 @@
     <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="accept">Accept</string>
+    <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_section1">Overview</string>
+    <string name="action_section2">Map</string>
     <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="action_sign_in">Sign in</string>
@@ -251,6 +255,11 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
+    <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment/>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
@@ -259,6 +268,9 @@
     <string name="store_picture_title">Save image</string>
     <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="title_activity_main_tabbed">Vehicle Details</string>
+    <string name="title_section1">Overview</string>
+    <string name="title_section2">Map</string>
     <string name="title_vehicle_detail">Vehicle Detail</string>
     <string name="title_vehicle_list">Vehicles</string>
     <!-- From: file:/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->

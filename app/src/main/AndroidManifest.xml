@@ -34,6 +34,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="io.moj.mojioandroid.VehicleListActivity" />
         </activity>
+        <activity
+            android:name=".MainTabbedActivity"
+            android:label="@string/title_activity_main_tabbed"
+            android:parentActivityName=".VehicleListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="io.moj.mojioandroid.VehicleListActivity" />
+        </activity>
     </application>
 
 </manifest>

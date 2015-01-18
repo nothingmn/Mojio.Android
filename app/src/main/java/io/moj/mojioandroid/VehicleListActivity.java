@@ -90,18 +90,25 @@ public class VehicleListActivity extends FragmentActivity
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
-            Bundle arguments = new Bundle();
-            arguments.putString(VehicleDetailFragment.ARG_ITEM_ID, id);
-            VehicleDetailFragment fragment = new VehicleDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.vehicle_detail_container, fragment)
-                    .commit();
+//            Bundle arguments = new Bundle();
+//            arguments.putString(VehicleDetailFragment.ARG_ITEM_ID, id);
+//            VehicleDetailFragment fragment = new VehicleDetailFragment();
+//            fragment.setArguments(arguments);
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.vehicle_detail_container, fragment)
+//                    .commit();
+
+            Intent detailIntent = new Intent(this, MainTabbedActivity.class);
+            detailIntent.putExtra(VehicleDetailFragment.ARG_ITEM_ID, id);
+            detailIntent.putExtra(LoginActivity.MOJIO_CLIENT_ID, mojio.getMojioAPIToken());
+
+            startActivity(detailIntent);
+
 
         } else {
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
-            Intent detailIntent = new Intent(this, VehicleDetailActivity.class);
+            Intent detailIntent = new Intent(this, MainTabbedActivity.class);
             detailIntent.putExtra(VehicleDetailFragment.ARG_ITEM_ID, id);
             detailIntent.putExtra(LoginActivity.MOJIO_CLIENT_ID, mojio.getMojioAPIToken());
 

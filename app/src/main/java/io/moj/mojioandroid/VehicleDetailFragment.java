@@ -40,10 +40,6 @@ public class VehicleDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String mojioId = getArguments().getString(LoginActivity.MOJIO_CLIENT_ID);
-        MojioClient client = new MojioClient(Configuration.getDefault());
-        client.setMojioAPIToken(mojioId);
-
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             String vehicleId = getArguments().getString(ARG_ITEM_ID);
             selectedVehicle = MojioClient.VehicleByMojioId(vehicleId);
@@ -57,7 +53,7 @@ public class VehicleDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (selectedVehicle != null) {
-            ((TextView) rootView.findViewById(R.id.vehicle_detail)).setText(selectedVehicle.MojioId);
+            ((TextView) rootView.findViewById(R.id.vehicle_detail)).setText(selectedVehicle.Name + " ("+selectedVehicle.VIN+")");
         }
 
         return rootView;

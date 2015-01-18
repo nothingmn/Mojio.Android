@@ -9,6 +9,8 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by robchartier on 15-01-16.
@@ -18,7 +20,20 @@ public class MojioClient {
     // A SyncHttpClient is an AsyncHttpClient
     public AsyncHttpClient syncClient = new SyncHttpClient();
     public AsyncHttpClient asyncClient = new AsyncHttpClient();
+    public static List<Vehicle> Vehicles = null;
 
+    public static Vehicle VehicleByMojioId(String mojioID) {
+        Vehicle vehicle = null;
+        Iterator<Vehicle> i = Vehicles.iterator();
+        while(i.hasNext()) {
+            Vehicle v = i.next();
+            if(v.MojioId.equals(mojioID)){
+                vehicle = v;
+                break;
+            }
+        }
+        return vehicle;
+    }
     private Configuration _config = null;
     public MojioClient(Configuration configuration){
         if(configuration==null) configuration = Configuration.getDefault();

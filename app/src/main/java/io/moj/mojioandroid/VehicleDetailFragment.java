@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import Mojio.Configuration;
+import Mojio.MojioClient;
 import Mojio.Vehicle;
 
 /**
@@ -34,16 +36,17 @@ public class VehicleDetailFragment extends Fragment {
      */
     public VehicleDetailFragment() {
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        String mojioId = getArguments().getString(LoginActivity.MOJIO_CLIENT_ID);
+        MojioClient client = new MojioClient(Configuration.getDefault());
+        client.setMojioAPIToken(mojioId);
+
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            // Load the dummy content specified by the fragment
-            // arguments. In a real-world scenario, use a Loader
-            // to load content from a content provider.
-            //mItem = VehicleContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            String vehicleId = getArguments().getString(ARG_ITEM_ID);
+            selectedVehicle = MojioClient.VehicleByMojioId(vehicleId);
         }
     }
 

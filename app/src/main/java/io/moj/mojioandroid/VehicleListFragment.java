@@ -75,7 +75,6 @@ public class VehicleListFragment extends ListFragment {
      */
     public VehicleListFragment() {
     }
-
     MojioClient mojio = null;
     public void setMojioClient(MojioClient client) {
         mojio = client;
@@ -98,18 +97,18 @@ public class VehicleListFragment extends ListFragment {
 
                     JSONArray vehiclesJSON = response.getJSONArray("Data");
 
-                    List<Vehicle> vehicles = new ArrayList<Vehicle>();
+                    MojioClient.Vehicles = new ArrayList<Vehicle>();
                     for(int x=0;x<=vehiclesJSON.length()-1;x++) {
                         JSONObject vehicleJSON = vehiclesJSON.getJSONObject(x);
                         Vehicle item = new Vehicle(vehicleJSON);
-                        vehicles.add(item);
+                        MojioClient.Vehicles.add(item);
                     }
 
                     setListAdapter(new ArrayAdapter<Vehicle>(
                             getActivity(),
                             android.R.layout.simple_list_item_activated_1,
                             android.R.id.text1,
-                            vehicles));
+                            MojioClient.Vehicles));
 
                 } catch(Exception e){
                     System.out.println("vehicles error" + e);
@@ -168,9 +167,7 @@ public class VehicleListFragment extends ListFragment {
 
         //*******************************************
 
-
-
-        //mCallbacks.onItemSelected(VehicleContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(MojioClient.Vehicles.get(position).id);
     }
 
     @Override

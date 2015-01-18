@@ -39,13 +39,11 @@ public class VehicleDetailActivity extends ActionBarActivity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(VehicleDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(VehicleDetailFragment.ARG_ITEM_ID));
+            arguments.putString(VehicleDetailFragment.ARG_ITEM_ID, getIntent().getStringExtra(VehicleDetailFragment.ARG_ITEM_ID));
+            arguments.putString(LoginActivity.MOJIO_CLIENT_ID, getIntent().getStringExtra(LoginActivity.MOJIO_CLIENT_ID));
             VehicleDetailFragment fragment = new VehicleDetailFragment();
             fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.vehicle_detail_container, fragment)
-                    .commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.vehicle_detail_container, fragment).commit();
         }
     }
 

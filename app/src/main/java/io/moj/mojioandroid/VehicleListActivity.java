@@ -103,6 +103,8 @@ public class VehicleListActivity extends FragmentActivity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, VehicleDetailActivity.class);
             detailIntent.putExtra(VehicleDetailFragment.ARG_ITEM_ID, id);
+            detailIntent.putExtra(LoginActivity.MOJIO_CLIENT_ID, mojio.getMojioAPIToken());
+
             startActivity(detailIntent);
         }
     }

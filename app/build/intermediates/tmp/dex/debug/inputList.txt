@@ -1,0 +1,7 @@
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/classes/debug
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-d39943137719d99bf6c66a1704463e6b7b64fcb9.jar
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.6-3137ab4699e9708954eff912487c51b856dafcd1.jar
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-bf61932c56f2abdfa4faf4fea70db690e6d887b0.jar
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/pre-dexed/debug/classes-9a1a9f49294b62e2f7b95edae5fa412246452c11.jar
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/pre-dexed/debug/classes-6219b3e3cd054915bea7f2e4cbf00447e087822f.jar
+/Users/robchartier/AndroidStudioProjects/Mojio.Android/app/build/intermediates/pre-dexed/debug/classes-6d498a391afb8be2351953fbf2a6271460154d24.jar

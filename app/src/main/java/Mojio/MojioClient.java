@@ -1,5 +1,6 @@
 package Mojio;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.loopj.android.http.*;
@@ -22,6 +23,8 @@ public class MojioClient {
     public MojioClient(Configuration configuration){
         if(configuration==null) configuration = Configuration.getDefault();
         _config=configuration;
+
+        getClient().addHeader("Content-Type", "application/json");
     }
     private AsyncHttpClient getClient()
     {
@@ -79,6 +82,12 @@ public class MojioClient {
             }
 
         });
+    }
+    public void Vehicles(JsonHttpResponseHandler handler){
+        System.out.println("Vehicles called");
+        String url = _config.getHost()+ "/v1/Vehicles";
+        System.out.println("Vehicles url=" + url);
+        getClient().get( url, handler);
     }
 
 }

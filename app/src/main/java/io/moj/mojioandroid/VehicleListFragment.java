@@ -8,7 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import io.moj.mojioandroid.dummy.DummyContent;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Mojio.MojioClient;
+import Mojio.Vehicle;
 
 /**
  * A list fragment representing a list of Vehicles. This fragment
@@ -67,16 +76,56 @@ public class VehicleListFragment extends ListFragment {
     public VehicleListFragment() {
     }
 
+    MojioClient mojio = null;
+    public void setMojioClient(MojioClient client) {
+        mojio = client;
+
+        // Simulate network access.
+        //Thread.sleep(2000);
+        mojio.Vehicles(new JsonHttpResponseHandler() {
+
+            @Override
+            public void onFailure(int statusCode, org.apache.http.Header[] headers, String errorResponse, Throwable e) {
+                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                System.out.println("get vehicles failed with:" + statusCode);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, org.apache.http.Header[] headers, JSONObject response) {
+                // If the response is JSONObject instead of expected JSONArray
+                try {
+                    System.out.println("vehicles request was complete!!!!" + response);
+
+                    JSONArray vehiclesJSON = response.getJSONArray("Data");
+
+                    List<Vehicle> vehicles = new ArrayList<Vehicle>();
+                    for(int x=0;x<=vehiclesJSON.length()-1;x++) {
+                        JSONObject vehicleJSON = vehiclesJSON.getJSONObject(x);
+                        Vehicle item = new Vehicle(vehicleJSON);
+                        vehicles.add(item);
+                    }
+
+                    setListAdapter(new ArrayAdapter<Vehicle>(
+                            getActivity(),
+                            android.R.layout.simple_list_item_activated_1,
+                            android.R.id.text1,
+                            vehicles));
+
+                } catch(Exception e){
+                    System.out.println("vehicles error" + e);
+
+                }
+
+            }
+
+        });
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
-                getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                DummyContent.ITEMS));
+
     }
 
     @Override
@@ -116,7 +165,12 @@ public class VehicleListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+
+        //*******************************************
+
+
+
+        //mCallbacks.onItemSelected(VehicleContent.ITEMS.get(position).id);
     }
 
     @Override

@@ -5,7 +5,7 @@ package Mojio;
  */
 public class Configuration {
     private String application = "39f443b0-dcd0-4b60-b471-27d3e41e31c6";
-    private String secret = "a440d102-2024-4b66-bb35-af6fee0d97a5";
+    private String secret = "4d73a7b3-944c-4dc9-a75b-93ad2e8b4264";
     private String host = "https://api.moj.io";
     public String getApplication() {
         return this.application;

@@ -41,6 +41,7 @@ public class VehicleListActivity extends FragmentActivity
         setContentView(R.layout.activity_vehicle_list);
         // Show the Up button in the action bar.
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        fragment = ((VehicleListFragment) getSupportFragmentManager().findFragmentById(R.id.vehicle_list));
 
         if (findViewById(R.id.vehicle_detail_container) != null) {
             // The detail container view will be present only in the
@@ -48,22 +49,18 @@ public class VehicleListActivity extends FragmentActivity
             // res/values-sw600dp). If this view is present, then the
             // activity should be in two-pane mode.
             mTwoPane = true;
-
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
-            ((VehicleListFragment) getSupportFragmentManager()
-                    .findFragmentById(R.id.vehicle_list))
-                    .setActivateOnItemClick(true);
+            fragment.setActivateOnItemClick(true);
         }
-
-        // TODO: If exposing deep links into your app, handle intents here.
 
         Intent i = getIntent();
         String id = i.getStringExtra(LoginActivity.MOJIO_CLIENT_ID);
         mojio.setMojioAPIToken(id);
+        fragment.setMojioClient(mojio);
 
     }
-
+    VehicleListFragment fragment;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
